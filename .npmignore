@@ -1,0 +1,6 @@
+.idea
+coverage
+node_modules
+src
+__tests__
+test.ts
