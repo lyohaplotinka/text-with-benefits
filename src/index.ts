@@ -29,7 +29,7 @@ export function pack(text: string, data: Record<string, unknown>): string {
   return `${encodeURIComponent(text)}${dataBlocks.join('')}`;
 }
 
-export function unpack<T extends Record<string, unknown>>(
+export function unpack<T extends Record<keyof T, unknown>>(
   text: string,
 ): { text: string; data: T | null } {
   const textWithoutData = text.replace(PARSING_REGEX, '');
