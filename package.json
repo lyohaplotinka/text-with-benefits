@@ -1,7 +1,7 @@
 {
   "name": "text-with-benefits",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Tiny library for storing data in strings",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
