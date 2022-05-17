@@ -1,3 +1,5 @@
+import { useState, useLayoutEffect } from 'react';
+
 function getType(variable) {
     return Object.prototype.toString
         .call(variable)
@@ -67,4 +69,20 @@ function unpack(text) {
     };
 }
 
-export { pack, unpack };
+function useTextWithBenefits(initialText, initialData) {
+    const [resultText, setResultText] = useState();
+    const [text, updateText] = useState(initialText);
+    const [data, updateData] = useState(initialData ?? {});
+    useLayoutEffect(() => {
+        setResultText(() => pack(text, data));
+    }, [text, data]);
+    return {
+        resultText,
+        updateText,
+        updateData,
+        pack,
+        unpack,
+    };
+}
+
+export { useTextWithBenefits as default };
